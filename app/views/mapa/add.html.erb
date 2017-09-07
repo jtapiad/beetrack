@@ -1,8 +1,8 @@
 <div>
-<%= form_for @coords , url:{controller: "mapa", action: "add"} do |f| -%>
-	<%= f.text_field :latitude , placeholder: "Latitude"%>
-	<%= f.text_field :longitude , placeholder: "Longitude"%>
-	<%= f.text_field :vehicle_identifier , placeholder: "vehicle identifier" %>
-	<%= f.submit "Enviar", :disable_with => 'Enviando' %>
+<%= form_tag("/api/v1/gps" , :method => "post") do %>
+	<%= text_field_tag :latitude , nil, placeholder: "Latitude"%>
+	<%= text_field_tag :longitud , nil, placeholder: "Longitud"%>
+	<%= text_field_tag :identificador , nil, placeholder: "vehicle identifier"%>
+	<%= button_tag "Enviar",type: "submit" %>
 <% end -%>
 </div>
