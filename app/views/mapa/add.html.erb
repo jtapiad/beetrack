@@ -1,0 +1,8 @@
+<div>
+<%= form_for @coords , url:{controller: "mapa", action: "add"} do |f| -%>
+	<%= f.text_field :latitude , placeholder: "Latitude"%>
+	<%= f.text_field :longitude , placeholder: "Longitude"%>
+	<%= f.text_field :vehicle_identifier , placeholder: "vehicle identifier" %>
+	<%= f.submit "Enviar", :disable_with => 'Enviando' %>
+<% end -%>
+</div>
