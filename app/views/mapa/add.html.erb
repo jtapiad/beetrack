@@ -26,4 +26,34 @@
 		</div>
 		<% end -%>
 	</div>
+	
+	 <button type="btn btn-block" class="btn btn-info col-sm-offset-3 col-sm-6 " data-toggle="collapse" data-target="#multipart">Formulario de entrega</button>
+
+		<div class="container collapse" hidden id="multipart" style="margin-top:3.5em;">
+		<%= form_tag("https://app.beetrack.com/jobs" , method: "post", multipart: true, class: "form-horizontal bg-info") do %>
+		<div class="form-group">
+			<%= label_tag "name", nil , class: "control-label col-sm-4" %>
+			<div class="col-sm-4">
+				<%= text_field_tag :name , nil, placeholder: "nombre",class: "form-control" %>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= label_tag "email", nil , class: "control-label col-sm-4" %>
+			<div class="col-sm-4">
+				<%= text_field_tag :email , nil, placeholder: "email",class: "form-control"%>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= label_tag "proyecto", nil , class: "control-label col-sm-4" %>
+			<div class="col-sm-4">
+				<%= file_field_tag :proyecto , class: 'upload' %>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-4 col-sm-10">
+				<%= button_tag "Enviar",type: "submit",class:"btn btn-primary " %>
+			</div>
+		</div>
+		<% end -%>
+	</div>
 </div>
