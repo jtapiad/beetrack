@@ -14,6 +14,9 @@ gem 'mysql2'
 gem 'gon'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+
+gem 'bootstrap-sass', '~> 3.3.6'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

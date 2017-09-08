@@ -1,8 +1,29 @@
 <div>
-<%= form_tag("/api/v1/gps" , :method => "post") do %>
-	<%= text_field_tag :latitude , nil, placeholder: "Latitude" %>
-	<%= text_field_tag :longitud , nil, placeholder: "Longitud"%>
-	<%= text_field_tag :identificador , nil, placeholder: "vehicle identifier"%>
-	<%= button_tag "Enviar",type: "submit" %>
-<% end -%>
+	<div class="container">
+		<%= form_tag("/api/v1/gps" , :method => "post", class: "form-horizontal bg-info") do %>
+		<div class="form-group">
+			<%= label_tag "latitude", nil , class: "control-label col-sm-4" %>
+			<div class="col-sm-4">
+				<%= text_field_tag :latitude , nil, placeholder: "Latitude",class: "form-control" %>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= label_tag "longitud", nil , class: "control-label col-sm-4" %>
+			<div class="col-sm-4">
+				<%= text_field_tag :longitud , nil, placeholder: "Longitud",class: "form-control"%>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= label_tag "identificador", nil , class: "control-label col-sm-4" %>
+			<div class="col-sm-4">
+				<%= text_field_tag :identificador , nil, placeholder: "vehicle identifier",class: "form-control "%>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-4 col-sm-10">
+				<%= button_tag "Enviar",type: "submit",class:"btn btn-primary " %>
+			</div>
+		</div>
+		<% end -%>
+	</div>
 </div>
