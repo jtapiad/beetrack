@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170907003935) do
+ActiveRecord::Schema.define(version: 20170907040249) do
 
-  create_table "coords", force: :cascade do |t|
+  create_table "coordinates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "latitude"
     t.string   "longitude"
+    t.integer  "vehicle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vehicle_id"], name: "index_coordinates_on_vehicle_id", using: :btree
+  end
+
+  create_table "vehicles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "vehicle_identifier"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
